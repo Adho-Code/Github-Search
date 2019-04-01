@@ -16,9 +16,7 @@ baseUrl = "https://api.github.com";
  }
   gitSearch(){
 
-
 }
-
 
   getRepos(userName:string):Observable<Repo[]>{
     return this.http.get<Repo[]>(this.baseUrl+"/users/"+ userName+"/repos")

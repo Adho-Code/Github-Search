@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
 
    }
    public getUsers(event:any){
-     //promise
      interface ApiResponse{
        user:User[]
      }
