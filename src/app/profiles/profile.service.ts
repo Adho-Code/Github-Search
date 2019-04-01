@@ -19,10 +19,10 @@ baseUrl = "https://api.github.com";
 }
 
   getRepos(userName:string):Observable<Repo[]>{
-    return this.http.get<Repo[]>(this.baseUrl+"/users/"+ userName+"/repos")
+    return this.http.get<Repo[]>(this.baseUrl+"/users/"+ userName+"/repos?access_token=2a7e53d34dbe039a1a723d257537a98ba2920eb0")
 }
   getUsers(userName:string):Observable<User[]>{
-    return this.http.get<User[]>(this.baseUrl+"/users/"+ userName)
+    return this.http.get<User[]>(this.baseUrl+"/users/"+ userName +"?access_token=2a7e53d34dbe039a1a723d257537a98ba2920eb0")
 
 
   }
