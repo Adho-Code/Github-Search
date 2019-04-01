@@ -19,9 +19,9 @@ export class UserComponent implements OnInit {
 
   search() {
     this._profileService.updateUsername(this.username);
-    this._profileService.getUser().subscribe((user => {
+    this._profileService.getUser().subscribe(user => {
       this.user = user;
-    }));
+    });
 
     this._profileService.getRepos().subscribe(repos => {
       this.repos = repos;
