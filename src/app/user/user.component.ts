@@ -26,7 +26,6 @@ export class UserComponent implements OnInit {
 
     this._userService.getRepos().subscribe(repos => {
       this.repos = repos;
-      //console.log(repos);
       this.calculateLanguages(repos);
     })
 
@@ -34,7 +33,6 @@ export class UserComponent implements OnInit {
   calculateLanguages(repos) {
     var lang = [];
     for (let repo of repos) {
-      //console.log(repo.languages_url);
       this._userService.getLanguages(repo.languages_url).subscribe(language => {
         lang.push(language);
         this._userService.storeLanguageMap(language);
