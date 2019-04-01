@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { SearchService } from "./git-search/search.service";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
