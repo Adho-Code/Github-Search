@@ -1,27 +1,45 @@
-# GithubSearch
+github-project
+This is an app that lets users search through Github for other users and also view their repositories. This is implemented using the Github API. This app was generated with Angular CLI.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Author name
+Adho Galgallo
 
-## Development server
+Project description
+This is an app that enable the  users search through Github for other users and also view their repositories. This is implemented using the Github API. This app was generated with Angular CLI. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Technology used
+ * HTML
+ * JAVASCRIPTS
+ * CSS
+ * ANGULAR CLI
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Known bugs
+Currently there are no error but you are free to point out any errors concerned.
 
-## Build
+Contact information
+ EmailAddress: adhoadhigal@gmail.com
+ Phone Number: +254 748393309
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Project setup installation
+1.On GitHub, navigate to the main page of the repository.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2.Under the repository name, click Clone or download.
 
-## Running end-to-end tests
+3.In the Clone with HTTPs section, click to copy the clone URL for the repository.
+ 
+4.Open Terminal.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+5.Change the current working directory to the location where you want the cloned directory to be made.
 
-## Further help
+6.Type git clone, and then paste the URL you copied in Step 2.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+7.Press Enter. Your local clone will be created.
+
+Live link
+
+
+Behavior Driven Development
+Behavior	input	output
+User submits searhes for github profile .	github Username .	Profile of github user
