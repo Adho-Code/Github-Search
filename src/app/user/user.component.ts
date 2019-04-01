@@ -40,7 +40,6 @@ export class UserComponent implements OnInit {
       })
     }
     this.languages = lang;
-    //str = JSON.stringify(this.languages)
     console.log(this.languages);
     console.log(this._userService.getLanguageMap());
   }
