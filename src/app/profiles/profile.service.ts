@@ -36,7 +36,7 @@ export class ProfileService {
         tempVal += value;
         this.languageMap.set(name, tempVal);
       }
-      // Do something
+      
     }
   }
   getLanguageMap() {
