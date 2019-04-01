@@ -1,50 +1,72 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profiles/profile.service';
+import { User } from "../user";
+import {HttpClient } from "@angular/common/http";
+import { SearchService } from "../git-search/search.service";
+import { Observable } from "rxjs";
+import { Repos } from "../repo/repos";
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  providers: [ProfileService]
+  selector: 'app-github',
+  templateUrl: './github.component.html',
+  providers:[SearchService],
+  styleUrls: ['./github.component.css']
+
 })
-export class UserComponent implements OnInit {
-  user: any;
-  repos: any;
-  username: string;
-  languages: Object[];
+export class GithubComponent implements OnInit {
 
-  constructor(private _profileService: ProfileService) {
-    console.log('Github Component init');
 
-  }
+  userName:string="";
+  repos:Repos[];
+  loading:boolean =false;
+  errorMessage="";
+  user:User[];
 
-  search() {
-    this._profileService.updateUsername(this.username);
-    this._profileService.getUser().subscribe(user => {
-      this.user = user;
-    });
+  constructor(private http:HttpClient,private searchService:SearchService) {
+   }
+   public getRepos(){
 
-    this._profileService.getRepos().subscribe(repos => {
-      this.repos = repos;
-      this.calculateLanguages(repos);
-    })
+     let promise=new Promise((resolve,reject)=>{
+       this.searchService.getRepos(this.userName).toPromise().then(response=>{
+         this.repos=response;
+         resolve()
+       },
+       error=>{
+          this.errorMessage="An Error Occured"
+         reject(error)
+       })
 
-  }
-  calculateLanguages(repos) {
-    var lang = [];
-    for (let repo of repos) {
-      this._profileService.getLanguages(repo.languages_url).subscribe(language => {
-        lang.push(language);
-        this._profileService.storeLanguageMap(language);
+     })
 
-      })
-    }
-    this.languages = lang;
-    console.log(this.languages);
-    console.log(this._profileService.getLanguageMap());
+     return promise;
 
-  }
+   }
+   public getUsers(event:any){
+     //promise
+     interface ApiResponse{
+       user:User[]
+     }
+     let promise =new Promise((resolve,reject)=>{
+      this.searchService.getUsers(this.userName).toPromise().then(response=>{
+        this.user=response;
+         resolve()
+
+
+       },
+       error=>{
+         this.errorMessage="An error was encountered";
+         reject(error);
+       }
+     )
+     })
+     return promise;
+
+   }
+
+
+
   ngOnInit() {
+    
   }
 
 }
-
+   
