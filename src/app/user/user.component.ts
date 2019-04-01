@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/service.profile';
+import { UserService } from '../users/user.service';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +14,6 @@ export class UserComponent implements OnInit {
 
   constructor(private _userService: UserService) {
     console.log('Github Component init');
-
 
   }
 
