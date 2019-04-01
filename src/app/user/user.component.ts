@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/user.service';
+import { ProfileService } from '../profiles/profile.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  providers: [UserService]
+  providers: [ProfileService]
 })
 export class UserComponent implements OnInit {
   user: any;
@@ -12,18 +12,18 @@ export class UserComponent implements OnInit {
   username: string;
   languages: Object[];
 
-  constructor(private _userService: UserService) {
+  constructor(private _profileService: ProfileService) {
     console.log('Github Component init');
 
   }
 
   search() {
-    this._userService.updateUsername(this.username);
-    this._userService.getUser().subscribe(user => {
+    this._profileService.updateUsername(this.username);
+    this._profileService.getUser().subscribe(user => {
       this.user = user;
     });
 
-    this._userService.getRepos().subscribe(repos => {
+    this._profileService.getRepos().subscribe(repos => {
       this.repos = repos;
       this.calculateLanguages(repos);
     })
@@ -32,17 +32,17 @@ export class UserComponent implements OnInit {
   calculateLanguages(repos) {
     var lang = [];
     for (let repo of repos) {
-      this._userService.getLanguages(repo.languages_url).subscribe(language => {
+      this._profileService.getLanguages(repo.languages_url).subscribe(language => {
         lang.push(language);
-        this._userService.storeLanguageMap(language);
+        this._profileService.storeLanguageMap(language);
 
       })
     }
     this.languages = lang;
     console.log(this.languages);
-    console.log(this._userService.getLanguageMap());
-  }
+    console.log(this._profileService.getLanguageMap());
 
+  }
   ngOnInit() {
   }
 
