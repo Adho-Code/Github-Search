@@ -4,17 +4,14 @@ import {HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Repo } from "../repo";
 import { SearchService } from "../profiles/profile.service"
-
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
+  selector: 'app-home',
+  templateUrl: './home.component.html',
   providers:[SearchService],
-  styleUrls: ['./user.component.css']
-
+  styleUrls: ['./home.component.css']
 })
-export class GithubComponent implements OnInit {
-
-
+export class HomeComponent implements OnInit {
+  
   userName:string="";
   repos:Repo[];
   loading:boolean =false;
@@ -62,11 +59,7 @@ export class GithubComponent implements OnInit {
 
    }
 
-
-
   ngOnInit() {
-    
   }
 
 }
-   
