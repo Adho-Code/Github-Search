@@ -30,17 +30,25 @@ Currently there are no error but you are free to point out any errors concerned.
 
 3.In the Clone with HTTPs section, click to copy the clone URL for the repository.
  
-4.Open Terminal.
+4.cd the folder called github account
 
-5.Change the current working directory to the location where you want the cloned directory to be made.
+5.ng serve
 
-6.Type git clone, and then paste the URL you copied in Step 2.
+6.Change the current working directory to the location where you want the cloned directory to be made.
 
-7.Press Enter. Your local clone will be created.
+7.Type git clone, and then paste the URL you copied in Step 2.
+
+8.Press Enter. Your local clone will be created.
 
 Live link
 
 
 ## Behavior Driven Development
-Behavior	input	output
-User submits searhes for github profile .	github Username .	Profile of github user
+Behavior	|  input  |    output   |
+User submits searhes for github profile |.	github Username .|	Profile of github user|
+
+
+ ## License
+
+ MIT Lisense
+ copyright (c) 2019 Adho Galgallo
