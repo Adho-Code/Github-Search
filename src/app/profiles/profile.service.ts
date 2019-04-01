@@ -13,5 +13,36 @@ export class ProfileService {
     console.log ('Github service init');
    }
 
-   getUser
+   getRepos() {
+    return this._http.get(`https://api.github.com/users/${this.username}/repos?per_page=100`)
+      .pipe(map(res => res.json()));
+  }
+  updateUsername(username: string) {
+    this.username = username;
+  }
+  getLanguages(url: string) {
+    return this._http.get(url).pipe(map(res => res.json()));
+  }
+  storeLanguageMap(language: Object) {
+    var languageArray = Object.keys(language);
+    for (var j = 0; j < languageArray.length; j++) {
+      var name = languageArray[j];
+      var value = language[name];
+      console.log(value);
+      if (!this.languageMap.get(name)) {
+        this.languageMap.set(name, value);
+      } else {
+        var tempVal = this.languageMap.get(name);
+        tempVal += value;
+        this.languageMap.set(name, tempVal);
+      }
+      // Do something
+    }
+  }
+  getLanguageMap() {
+    return this.languageMap;
+  }
+
 }
+
+
