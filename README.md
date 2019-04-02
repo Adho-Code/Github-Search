@@ -2,7 +2,7 @@
 ## Description
 This is an app that lets users search through Github for other users and also view their repositories. This is implemented using the Github API. This app was generated with Angular CLI.
 
-Author name
+## Author name
 Adho Galgallo
 
 Project description
@@ -41,7 +41,7 @@ Currently there are no error but you are free to point out any errors concerned.
 8.Press Enter. Your local clone will be created.
 
 Live link
-https://adhoadhi.github.io/Github-Search/
+https://githubsearchchuu.netlify.com/
 
 ## Behavior Driven Development
 |  Behaviour | Input  | Output  | 
