@@ -41,11 +41,12 @@ Currently there are no error but you are free to point out any errors concerned.
 8.Press Enter. Your local clone will be created.
 
 Live link
-
+https://adhoadhi.github.io/Github-Search/
 
 ## Behavior Driven Development
-Behavior	|  input  |    output   |
-User submits searhes for github profile |.	github Username .|	Profile of github user|
+|  Behaviour | Input  | Output  | 
+|----------- |---------|--------|
+|  User search for username | Display user profile  | Repository for the user  |
 
 
  ## License
